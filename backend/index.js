@@ -1,10 +1,27 @@
 const express = require('express')
 const mainRouter = require('./routes/index')
+const cors = require('cors')
+
 
 const app = express()
+app.use(cors())
+app.use(express.json())
 
 // all requests to /api/v1/(anything) goes to mainRouter defined in routes/index.js
 app.use('/api/v1', mainRouter)
+
+
+
+
+app.listen(3000, function (req, res) {
+    console.log('Server Running on port 3000')
+})
+
+
+
+
+
+
 
 
 // structure a chunck of your api to go to a single file and then another chunck to go to a single file
@@ -16,8 +33,4 @@ app.use('/api/v1', mainRouter)
 // /api/v1/account/transferMoney
 // /api/v1/account/balance
 
-
-app.listen(3000, function (req, res) {
-    console.log('Server Running on port 3000')
-})
 
