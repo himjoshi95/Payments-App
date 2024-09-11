@@ -1,11 +1,11 @@
 const express = require('express')
-const mainRouter = require('./routes/index')
 const cors = require('cors')
-
 
 const app = express()
 app.use(cors())
 app.use(express.json())
+const mainRouter = require('./routes/index')
+
 
 // all requests to /api/v1/(anything) goes to mainRouter defined in routes/index.js
 app.use('/api/v1', mainRouter)
