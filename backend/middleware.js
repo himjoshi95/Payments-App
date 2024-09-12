@@ -18,7 +18,9 @@ const authMiddleware = (req, res, next) => {
             res.status(403).json({})            
         }
     } catch(error) {
-        res.status(403).json({})
+        res.status(403).json({
+            loggedin:false
+        })
     }    
 }
 

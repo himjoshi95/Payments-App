@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { BottomWarning } from "../components/BottomWarning";
 import { Button } from "../components/Button";
 import { Heading } from "../components/Heading";
@@ -12,6 +12,16 @@ export function Signin() {
     const [password, setPassword] = useState("")
     
     const navigate = useNavigate()
+
+    useEffect(() => {
+        axios.get("http://localhost:3000/api/v1/user/me", {
+            headers : {Authorization : `Bearer ${localStorage.getItem('token')}`}
+        }).then(() => {          
+            navigate('/dashboard')         
+        }).catch(() => {
+            navigate('/signin')
+        })
+    }, [])
     return (
         <div className="h-screen bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% flex justify-center">
             <div className="flex flex-col justify-center">
