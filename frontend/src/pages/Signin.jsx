@@ -6,9 +6,9 @@ import { SubHeading } from "../components/SubHeading";
 
 export function Signin() {
     return (
-        <div className="h-screen bg-slate-400 flex justify-center">
+        <div className="h-screen bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% flex justify-center">
             <div className="flex flex-col justify-center">
-                <div className="bg-white w-80 h-max p-2 px-4 text-center rounded-lg">
+                <div className="bg-white shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] w-80 h-max p-2 px-4 text-center rounded-lg">
                     <Heading label={"Sign In"} />
                     <SubHeading label={"Enter your credentials to access your account"} />
                     
